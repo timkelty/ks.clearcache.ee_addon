@@ -10,12 +10,12 @@
   }
   
   function clearCache() {
-    $(document).ready(function() {
+    jQuery(document).ready(function($) {
       $('#ks-clear-cache').click(function() {
         var timer = new Date(),
             clearlink = this,
             clearlinkHref = clearlink.href;
-            $clearlink = $(this).addClass('loading'),
+            $clearlink = $(this).addClass('loading');
             clearText = $clearlink.html();
             $clearlink.html('Clearing Cache...').attr('href', '');
         $.post(clearlinkHref, function() {
@@ -55,3 +55,4 @@
   }
   
 })();
+jQuery.noConflict();
