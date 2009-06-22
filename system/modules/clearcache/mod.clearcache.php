@@ -54,6 +54,7 @@ class Clearcache {
       $js .= 's.src = "/' . $cpurl . '/modules/clearcache/clearcache.js";';
       $js .= 'b.appendChild(s);';
       $js .= '})();</script>';
+      $js = ! $TMPL->fetch_param('no_conflict') ? 'no' : $TMPL->fetch_param('no_conflict');
       
       $this->return_data = $output . "\n" . $js;
       
